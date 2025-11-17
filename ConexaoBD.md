@@ -30,3 +30,4 @@ O banco de dados MySQL é onde estão armazenados os dados de uma aplicação. P
    global.db = db;
    module.exports = db;
    ```
+   **ATENÇÃO:** Por motivos de sergurança nós não subimos para o GitHub os dados de conexão do BD, pois estar surgei a invasoes. Criamos um arquivo .env
