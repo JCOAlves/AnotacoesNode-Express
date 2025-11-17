@@ -31,17 +31,20 @@ let router = express.Router();
 /* Outras rotas definidas anteriormente... */
 
 /* Rota usando 1 parâmetro enviado na URL. */
-router.get('/ola/:nome'
+router.get('/ola/:nome', function(req, res) {
+  let msg = '<h2>Olá, ' + req.params.nome + '!</h2>';
+  res.send(msg);
+});
 
-, function(req, res) {
-
-let msg = '<h2>Olá, ' + req.params.nome + '!</h2>';
-res.send(msg);
+/*Podemos adicionar mais de um parâmetro na rota.*/
+router.get('/ola/:nome/:sobrenome', function(req, res) {
+  let msg = '<h2>Olá, ' + req.params.nome + " " + req.params.sobrenome + '!</h2>';
+  res.send(msg);
 });
 
 module.exports = router;
 ```
-Podemos utilizar mais de um parâmetro em uma rota, utilizando ```query``` para acessar mais de uma parâmetro na URL, desde que comece com "?" e os parâmetros sejam separados por "&".
+Também podemos utilizar o ```query``` para acessar mais de uma parâmetro na URL, desde que comece com "?" e os parâmetros sejam separados por "&".
 ```JavaScript
 let express = require('express');
 let router = express.Router();
