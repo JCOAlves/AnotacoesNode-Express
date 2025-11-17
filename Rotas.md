@@ -36,7 +36,7 @@ router.get('/ola/:nome', function(req, res) {
   res.send(msg);
 });
 
-/*Podemos adicionar mais de um parâmetro na rota.*/
+/*Podemos adicionar mais de um parâmetro na rota, mas é necessario separar os parâmetros por barras.*/
 router.get('/ola/:nome/:sobrenome', function(req, res) {
   let msg = '<h2>Olá, ' + req.params.nome + " " + req.params.sobrenome + '!</h2>';
   res.send(msg);
