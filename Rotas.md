@@ -41,23 +41,21 @@ res.send(msg);
 
 module.exports = router;
 ```
-Podemos utilizar mais de um parâmetro em uma rota.
+Podemos utilizar mais de um parâmetro em uma rota, utilizando ```query``` para acessar mais de uma parâmetro na URL, desde que comece com "?" e os parâmetros sejam separados por "&".
 ```JavaScript
 let express = require('express');
 let router = express.Router();
 
 /* Outras rotas definidas anteriormente... */
-/* Rota "imc" com vários parâmetros. */
-router.get('/imc'
+/* Rota "imc" com vários parâmetros: localhost:3000/imc/?peso=88&estatura=1.82 */
+router.get('/imc', function(req, res) {
+  let peso = req.query.peso;
+  let estatura = req.query.estatura;
 
-, function(req, res) {
-
-let peso = req.query.peso;
-let estatura = req.query.estatura;
-
-let imc = peso / Math.pow(estatura, 2);
-let msg = '<h3>Seu IMC é ' + imc.toFixed(2) + '</h3>';
-res.send(msg);
+  let imc = peso / Math.pow(estatura, 2);
+  let msg = '<h3>Seu IMC é ' + imc.toFixed(2) + '</h3>';
+  res.send(msg);
+  //Resposta: "Seu IMC é 26.57"
 });
 
 module.exports = router;
