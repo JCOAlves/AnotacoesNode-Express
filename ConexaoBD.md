@@ -30,4 +30,30 @@ O banco de dados MySQL é onde estão armazenados os dados de uma aplicação. P
    global.db = db;
    module.exports = db;
    ```
-   **ATENÇÃO:** Por motivos de sergurança nós não subimos para o GitHub os dados de conexão do BD, pois estar surgei a invasoes. Criamos um arquivo .env
+   **ATENÇÃO:** Por motivos de sergurança nós não subimos para o GitHub os dados de conexão do banco, pois permite a invasoes de usuaários mal-intencionados. Com isso, criamos um arquivo `.env` para armazenar dados da conexão, a qual deve ser ignorado no commit para o GitHub.
+
+## 2. Retornando dados do banco
+Para retornamos os dados do banco utilizamos o objeto da conexão `db`.
+```javascript
+let express = require('express');
+let router = express.Router();
+let db = require('../utils/db');
+
+/* Outras rotas definidas anteriormente... */
+router.get('/autores/listar', function(req, res) {
+   db.query('SELECT * FROM TbAutor', [], function(erro, listagem){
+      if (erro){
+         res.send(erro);
+      }
+      res.send(listagem);
+   });
+});
+
+module.exports = router;
+```
+- **`router.get`**:
+- **`'/autores/listar'`**:
+- **`db.query`**:
+- **`'SELECT * FROM TbAutor'`**:
+- **`[]`**:
+- **`function(erro, listagem)`**:
