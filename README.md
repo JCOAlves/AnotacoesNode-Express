@@ -1,5 +1,5 @@
-# AnotacoesNode-Express
-Express é um framework web para Node.js que facilita e acelera a criação de aplicativos e APIs back-end, oferecendo recursos como roteamento, tratamento de requisições HTTP e middleware. Ele funciona como uma camada de abstração sobre o Node.js, que é o ambiente de runtime que executa JavaScript no servidor.  
+# Express
+O Express é um framework web para Node.js que facilita e acelera a criação de aplicativos e APIs back-end, oferecendo recursos como roteamento, tratamento de requisições HTTP e middleware. Ele funciona como uma camada de abstração sobre o Node.js, que é o ambiente de runtime que executa JavaScript no servidor.  
 
 ## Funcionalidades principais do Express:
 - **Roteamento:** Permite definir rotas para diferentes URLs e verbos HTTP (GET, POST, etc.).
@@ -13,7 +13,7 @@ Express é um framework web para Node.js que facilita e acelera a criação de a
 - **Express:** É um framework construído sobre o Node.js. Ele não substitui o Node.js, mas o complementa, fornecendo uma estrutura mais organizada e ferramentas para criar aplicações web de forma mais eficiente.
 
 ## Sumario
-1. ("Criando um projeto Express")["CriandoProjeto.md"]
+1. 
 2. 
 3. 
 4. 
